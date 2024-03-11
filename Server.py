@@ -17,14 +17,14 @@ try:
         pacotes_recebidos = client_socket.recv(100000).decode()
         print(f"Mensagem do Cliente: {pacotes_recebidos}")
         
-        if pacotes_recebidos == "tchau\n":
+        if pacotes_recebidos == "tchau\n or "Tchau\n"":
             print("Fim da conexão")
             break
         
         mensagem_servidor = input("Mensagem do Servidor: ") + "\n"
         client_socket.send(mensagem_servidor.encode()) 
         
-        if mensagem_servidor == "tchau\n":
+        if mensagem_servidor == "tchau\n" or "Tchau\n":
             print("Fim da conexão")
             break
 
